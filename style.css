@@ -1,0 +1,38 @@
+body {
+    background-color: #f8f9fa;
+  }
+  
+  .hero {
+    background-image: url('heroBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-position-y: 90%;
+    height: 600px;
+    position: relative;
+    color: #fff;
+  }
+  
+  .hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .section-title {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 300px; /* itt állíthatod be a kívánt fix magasságot */
+    object-fit: contain;
+  }
+  

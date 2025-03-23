@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>South Park Bemutató</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">South Park</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Menü megnyitása">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Főoldal</a></li>
+          <li class="nav-item"><a class="nav-link" href="#history">Története</a></li>
+          <li class="nav-item"><a class="nav-link" href="#characters">Karakterek</a></li>
+          <li class="nav-item"><a class="nav-link" href="#episodes">Epizódok</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero szekció -->
+  <header class="hero">
+    <div class="hero-overlay">
+      <h1 class="display-3">South Park Bemutató</h1>
+      <p class="lead">A híres animációs sorozat modern bemutatása</p>
+      <a href="#about" class="btn btn-primary btn-lg">Tudj meg többet</a>
+    </div>
+  </header>
+
+  <!-- Fő tartalom -->
+  <main class="container my-5">
+
+    <!-- Történet -->
+    <section id="history" class="mt-5">
+        <h2 class="section-title">Története</h2>
+        <p></p>
+    </section>
+
+    <!-- Karakterek -->
+    <section id="characters">
+      <h2 class="section-title">Karakterek</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="StanMarsh.png" class="card-img-top" alt="Stan Marsh">
+            <div class="card-body">
+              <h5 class="card-title">Stan Marsh</h5>
+              <p class="card-text">Stan a sorozat központi karaktere, aki az átlagos amerikai tinédzser életét képviseli.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="KyleBroflovski.png" class="card-img-top" alt="Kyle Broflovski">
+            <div class="card-body">
+              <h5 class="card-title">Kyle Broflovski</h5>
+              <p class="card-text">Kyle az egyik legokosabb és legérzékenyebb karakter, aki gyakran küzd az igazságtalanság ellen.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="EricCartman.png" class="card-img-top" alt="Eric Cartman">
+            <div class="card-body">
+              <h5 class="card-title">Eric Cartman</h5>
+              <p class="card-text">Cartman egy ellentmondásos és provokatív figura, aki gyakran keveredik bajba saját viselkedése miatt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Epizódok -->
+    <section id="episodes" class="mt-5">
+      <h2 class="section-title">Legnépszerűbb Epizódok</h2>
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action">Epizód 1: A kezdetek</a>
+        <a href="#" class="list-group-item list-group-item-action">Epizód 2: A kalandok</a>
+        <a href="#" class="list-group-item list-group-item-action">Epizód 3: A kihívások</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lábléc -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+      <p>2025 South Park Bemutató. Készítette: Balogh L. Olivér, Durst Péter, Rádi Attila S.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
