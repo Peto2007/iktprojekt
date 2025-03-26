@@ -32,7 +32,32 @@ body {
 
   .card-img-top {
     width: 100%;
-    height: 300px; /* itt állíthatod be a kívánt fix magasságot */
+    height: 300px; 
     object-fit: contain;
   }
   
+/*kviz*/
+  
+#quiz {
+  border: 1px solid #aaa;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+#quiz h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.valasz {
+  margin: 5px 0;
+}
+
+#kerdes-sor {
+  margin-top: 10px;
+}
+
+button {
+  margin: 0 5px;
+}
