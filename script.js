@@ -1,45 +1,45 @@
 /*kviz*/
 
-//kérdések
+//Kérdések
 const kerdesek = [
   {
-    kerdes: "Mi South Park városa?",
-    valaszok: ["Denver", "South Park", "Los Angeles", "Chicago"],
-    helyes: 1
-  },
-  {
-    kerdes: "Ki a sorozat főszereplője?",
-    valaszok: ["Stan Marsh", "Harry Potter", "Ron Weasley", "Hermione Granger"],
+    kerdes: "Melyik karakter kapott anális beültetést?",
+    valaszok: ["Eric Cartman", "Stan Marsh", "Kyle Broflovski", "Kenny McCormick"],
     helyes: 0
   },
   {
-    kerdes: "Milyen animációs technikát használnak a sorozatban?",
-    valaszok: ["Stop motion", "3D modell", "2D vágás", "Papír animáció"],
-    helyes: 3
-  },
-  {
-    kerdes: "Melyik évben indult a sorozat?",
-    valaszok: ["1995", "1997", "1999", "2001"],
-    helyes: 2
-  },
-  {
-    kerdes: "Ki a kritikus karakter?",
-    valaszok: ["Eric Cartman", "Kyle Broflovski", "Stan Marsh", "Kenny McCormick"],
-    helyes: 0
-  },
-  {
-    kerdes: "Melyik témát nem érintik gyakran?",
-    valaszok: ["Politika", "Sport", "Kultúra", "Gasztronómia"],
-    helyes: 3
-  },
-  {
-    kerdes: "Milyen humor jellemzi a sorozatot?",
-    valaszok: ["Szituációs", "Absurd", "Romantikus", "Tragikus"],
+    kerdes: "Hol kezdődik az 'Cartman anális beültetése' epizód?",
+    valaszok: ["Iskolában", "Buszmegállóban", "Áruházban", "Kórházban"],
     helyes: 1
   },
   {
-    kerdes: "Melyik évben készült az első epizód?",
-    valaszok: ["1992", "1995", "1997", "2000"],
+    kerdes: "Mit javasol Gerald, amikor meglátja Dr. Biber pólóját?",
+    valaszok: ["Delfinplasztikát", "Negróplasztikát", "Fizioterápiát", "Semmit"],
+    helyes: 0
+  },
+  {
+    kerdes: "Miért lépett át Kenny Cartman csapatához az 'A tűz és segg dala' epizódban?",
+    valaszok: ["Mert szerette volna a csapatot", "Mert nem akarta, hogy hercegnő legyen", "Mert voltak ígéretek", "Mert nyertek valamit"],
+    helyes: 1
+  },
+  {
+    kerdes: "Mit hoz Bill Gates a South Park Plázába az epizód szerint?",
+    valaszok: ["Delfinplasztikát", "Fegyvereket", "Kosárlabdát", "Ajándékokat"],
+    helyes: 1
+  },
+  {
+    kerdes: "Mi történik, amikor a tehenek észreveszik az idegeneket az 'Cartman anális beültetése' epizódban?",
+    valaszok: ["Megrohamozzák a buszt", "Ijedtükben a vasútállomásra menekülnek", "Segítenek Cartmannak", "Elbújnak a farmon"],
+    helyes: 1
+  },
+  {
+    kerdes: "Mit tesz Mrs. Garrison, amikor nem jön el a menstruáció az 'Mr. Garrison vadiúj vaginája' epizódban?",
+    valaszok: ["Semmit", "Abortuszközpontba megy", "Új nemét fogad el", "Orvosi vizsgálatot kér"],
+    helyes: 1
+  },
+  {
+    kerdes: "Milyen változás történik a South Park Plázán a fekete pénteken az 'A tűz és segg dala' epizódban?",
+    valaszok: ["Árengedmény 80%-ról 90%-ra", "Árengedmény 80%-ról 96%-ra", "Nincs változás", "Árak emelkednek"],
     helyes: 1
   }
 ];
@@ -47,7 +47,7 @@ const kerdesek = [
 let aktualisKerdes = 0;
 const felhasznaloValaszok = new Array(kerdesek.length).fill(null);
 
-//DOM elemek
+//elemek
 const tartalom = document.getElementById("quiz-tartalom");
 const allapot = document.getElementById("kerdes-allapot");
 const elozoGomb = document.getElementById("elozo-gomb");
@@ -57,7 +57,7 @@ const bekuldesGomb = document.getElementById("bekuldes-gomb");
 const eredmenyekDiv = document.getElementById("eredmenyek");
 const ujrakezdGomb = document.getElementById("ujrakezd-gomb");
 
-// Kérdés megjelenítése
+//Kérdés megjelenítése
 function megjelenitKerdes(i) {
   const aktKerdes = kerdesek[i];
   let html = `<h3>${aktKerdes.kerdes}</h3>`;
@@ -73,7 +73,7 @@ function megjelenitKerdes(i) {
   allapot.textContent = `Kérdés ${i+1}/${kerdesek.length}`;
   elozoGomb.disabled = (i === 0);
   
-  // Beküld gomb megjelenítése, következő eltűnik
+  //Következő gomb rejtése, beküldés gomb megjelenítése
   if (i === kerdesek.length - 1) {
     kovetkezoGomb.style.display = "none";
     bekuldesGomb.style.display = "inline-block";
@@ -83,7 +83,7 @@ function megjelenitKerdes(i) {
   }
 }
 
-// Válasz megerősítése
+//Válasz megerősítése
 megerositGomb.addEventListener("click", () => {
   const valaszokRadio = document.getElementsByName("valasz");
   for (let v of valaszokRadio) {
@@ -91,14 +91,13 @@ megerositGomb.addEventListener("click", () => {
       felhasznaloValaszok[aktualisKerdes] = parseInt(v.value);
     }
   }
-  // Ha nem az utolsó kérdés, lépés a következőre
   if (aktualisKerdes < kerdesek.length - 1) {
     aktualisKerdes++;
     megjelenitKerdes(aktualisKerdes);
   }
 });
 
-// Következő gomb
+//Következő gomb
 kovetkezoGomb.addEventListener("click", () => {
   if (aktualisKerdes < kerdesek.length - 1) {
     aktualisKerdes++;
@@ -106,7 +105,7 @@ kovetkezoGomb.addEventListener("click", () => {
   }
 });
 
-// Beküldés gomb
+//Beküldés gomb
 bekuldesGomb.addEventListener("click", () => {
   if (felhasznaloValaszok.includes(null)) {
     alert("Még van hiányzó kérdés!");
@@ -115,7 +114,7 @@ bekuldesGomb.addEventListener("click", () => {
   befejez();
 });
 
-// Előző gomb
+//Előző gomb
 elozoGomb.addEventListener("click", () => {
   if (aktualisKerdes > 0) {
     aktualisKerdes--;
@@ -123,7 +122,7 @@ elozoGomb.addEventListener("click", () => {
   }
 });
 
-// Kvíz befejezése és eredmények megjelenítése
+//Kvíz befejezése és eredmények megjelenítése
 function befejez() {
   document.getElementById("quiz-tartalom").style.display = "none";
   document.getElementById("kerdes-allapot").style.display = "none";
@@ -143,7 +142,7 @@ function befejez() {
   ujrakezdGomb.style.display = "inline-block";
 }
 
-// Újrakezdés
+//Újrakezdés
 ujrakezdGomb.addEventListener("click", () => {
   aktualisKerdes = 0;
   felhasznaloValaszok.fill(null);
@@ -155,7 +154,7 @@ ujrakezdGomb.addEventListener("click", () => {
   megjelenitKerdes(aktualisKerdes);
 });
 
-// Indítás
+//az első kérdés megjelenítése, amikor az oldal betöltődik
 document.addEventListener("DOMContentLoaded", () => {
   megjelenitKerdes(aktualisKerdes);
 });
